@@ -1,4 +1,35 @@
-const question = [
+/* const quizContainer = document.querySelector('#quiz-container');
+
+function loadQuiz() {
+    questions.forEach((q, index) => {
+        const wrapper = document.createElement('div');
+
+        const title = document.createElement('h3');
+        title.textContent = `${index + 1}. ${q.question}`;
+        wrapper.append(title);
+
+        q.options.forEach((opt, i) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+
+            radio.type = 'radio';
+            radio.name = 'question' + index;
+            radio.value = i;
+
+            label.append(radio);
+            label.append(document.createTextNode(opt));
+
+            wrapper.append(label);
+            wrapper.append(document.createElement('br'));
+        });
+
+        quizContainer.append(wrapper);
+    });
+}
+
+loadQuiz(); */
+
+const questions = [
     {
     question: "JavaScript is a client-side programming language that runs in the browser by default.",
     options: ["True", "False"],
@@ -51,4 +82,35 @@ const question = [
   }
 ];
 
-console.log(question);
+console.log(questions);
+
+const quizContainer = document.querySelector('#quiz-container');
+
+function loadQuiz() {
+    questions.forEach((q, index) => {
+        const wrapper = document.createElement('div');
+
+        const title = document.createElement('h3');
+        title.textContent = `${index + 1}. ${q.question}`;
+        wrapper.append(title);
+
+        q.options.forEach((opt, i) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+
+            radio.type = 'radio';
+            radio.name = 'question' + index;
+            radio.value = i;
+
+            label.append(radio);
+            label.append(document.createTextNode(opt));
+
+            wrapper.append(label);
+            wrapper.append(document.createElement('br'));
+        });
+
+        quizContainer.append(wrapper);
+    });
+}
+
+loadQuiz();
