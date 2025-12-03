@@ -1,0 +1,13 @@
+body.dark {
+    background-color: #222;
+    color: white;
+}
+
+body.dark button {
+    background-color: #444;
+    color: white;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3 ease;
+}

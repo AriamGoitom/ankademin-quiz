@@ -1,34 +1,3 @@
-/* const quizContainer = document.querySelector('#quiz-container');
-
-function loadQuiz() {
-    questions.forEach((q, index) => {
-        const wrapper = document.createElement('div');
-
-        const title = document.createElement('h3');
-        title.textContent = `${index + 1}. ${q.question}`;
-        wrapper.append(title);
-
-        q.options.forEach((opt, i) => {
-            const label = document.createElement('label');
-            const radio = document.createElement('input');
-
-            radio.type = 'radio';
-            radio.name = 'question' + index;
-            radio.value = i;
-
-            label.append(radio);
-            label.append(document.createTextNode(opt));
-
-            wrapper.append(label);
-            wrapper.append(document.createElement('br'));
-        });
-
-        quizContainer.append(wrapper);
-    });
-}
-
-loadQuiz(); */
-
 const questions = [
     {
     question: "JavaScript is a client-side programming language that runs in the browser by default.",
@@ -82,9 +51,9 @@ const questions = [
   }
 ];
 
-console.log(questions);
-
 const quizContainer = document.querySelector('#quiz-container');
+const submitBtn = document.querySelector('#submit-btn');
+const resultDiv = document.querySelector('#result');
 
 function loadQuiz() {
     questions.forEach((q, index) => {
@@ -114,3 +83,39 @@ function loadQuiz() {
 }
 
 loadQuiz();
+
+submitBtn.addEventListener("click", () => {
+    let score = 0;
+
+    questions.forEach((q, index) => {
+        const selected = document.querySelector(
+            `input[name="question${index}"]:checked`
+        );
+
+        if(selected && Number(selected.value) === q.correct) {
+            score++;
+        }
+    });
+
+    const percentage = (score / questions.length) * 100;
+    let message = "";
+    let color = "";
+
+    if(percentage < 50) {
+        message = "Fail 😢";
+        color = "red";
+    } else if (percentage <= 75) {
+        message = "Good 😊";
+        color = "orange";
+    } else {
+        message = "Excellent! 🎉🎉";
+        color = "green";
+    }
+
+    resultDiv.textContent = `You got ${score} of ${questions.length} right - ${message}`;
+    resultDiv.style.color = color;
+});
+
+document.querySelector("#theme-toggle").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
