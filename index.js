@@ -153,14 +153,61 @@ submitBtn.addEventListener("click", () => {
     let score = 0;
 
     questions.forEach((q, index) => {
-        const selected = document.querySelector(
-            `input[name="question${index}"]:checked`
-        );
+        // Find the wrapper for each question
+        const wrapper = quizContainer.children[index];
+        wrapper.classList.remove("correct", "incorrect"); // Cleaning old style
+        const oldCorrectText = wrapper.querySelector(".correct-answer");
+        if (oldCorrectText) oldCorrectText.remove(); // Cleaning old answers
 
-        if(selected && Number(selected.value) === q.correct) {
-            score++;
+        // BOOLEAN & MULTIPLE
+        if(q.type === "boolean" || q.type === "multiple") {
+            const selected = document.querySelector(
+                `input[name="question${index}"]:checked`
+            );
+
+            if(selected) {
+                if (Number(selected.value) === q.correct) {
+                    score++;
+                    wrapper.classList.add("correct");
+                } else {
+                    wrapper.classList.add("incorrect");
+                    // Show correct answer
+                    const correctText = document.createElement("div");
+                    correctText.classList.add("correct-answer");
+                    correctText.textContent = "Correct answer: " + q.options[q.correct];
+                    wrapper.append(correctText);
+                }
+            }
+        }
+        // Checkbox
+        if (q.type == "checkbox") {
+            const selected = Array.from(
+                document.querySelectorAll(`input[name="question${index}"]:checked`)
+            ).map(input => Number(input.value));
+
+            const correctArray = q.correct;
+
+            const isCorrect =
+                selected.length === correctArray.length &&
+                selected.every(v => correctArray.includes(v));
+            
+            if(isCorrect) {
+                score++;
+                wrapper.classList.add("correct");
+            } else {
+                wrapper.classList.add("incorrect");
+                const correctText = document.createElement("div");
+                correctText.classList.add("correct-answer");
+
+                const correctLabels = q.correct.map(i => q.options[i]).join(", ");
+
+                correctText.textContent = "Correct answers: " + correctLabels;
+                wrapper.append(correctText);
+            }
         }
     });
+
+    resultDiv.textContent = `You got ${score} of ${questions.length} correct!`;
 
     const percentage = (score / questions.length) * 100;
     let message = "";
