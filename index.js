@@ -78,10 +78,10 @@ const questions = [
         options: [
             "This statement is false.",
             "push() adds to the end.",
-            "unshift() adds to the beginning.",
+            "push() adds to the middle.",
             "push() removes an element."
         ],
-        correct: [0, 1, 2]
+        correct: [0, 1]
     },
     {
         type: "checkbox",
@@ -107,7 +107,8 @@ function loadQuiz() {
         const title = document.createElement('h3');
         title.textContent = `${index + 1}. ${q.question}`;
         wrapper.append(title);
-        //  BOOLEAN & MULTIPLE CHOICE (radio buttons)
+        
+        //  Boolean & Multiple Choice (Radio Buttons)
         if(q.type === "boolean" || q.type === "multiple") {
             q.options.forEach((opt, i) => {
                 const label = document.createElement('label');
@@ -125,7 +126,7 @@ function loadQuiz() {
             });
         }
 
-        // BOOLEAN & MULTIPLE CHOICE (radio buttons)
+        // Boolean & Multiple Choice (Radio Buttons)
         if(q.type === "checkbox") {
             q.options.forEach((opt, i) => {
                 const label = document.createElement('label');
@@ -159,7 +160,7 @@ submitBtn.addEventListener("click", () => {
         const oldCorrectText = wrapper.querySelector(".correct-answer");
         if (oldCorrectText) oldCorrectText.remove(); // Cleaning old answers
 
-        // BOOLEAN & MULTIPLE
+        // Boolean & Multiple
         if(q.type === "boolean" || q.type === "multiple") {
             const selected = document.querySelector(
                 `input[name="question${index}"]:checked`
