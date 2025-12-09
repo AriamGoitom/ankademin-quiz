@@ -180,6 +180,13 @@ submitBtn.addEventListener("click", () => {
                     correctText.textContent = "Correct answer: " + q.options[q.correct];
                     wrapper.append(correctText);
                 }
+            } else {
+                // Mark as wrong even if nothing is selected in boolean and multiple choice questions
+                wrapper.classList.add("incorrect");
+                const correctText = document.createElement("div");
+                correctText.classList.add("correct-answer");
+                correctText.textContent = "Correct answer: " + q.options[q.correct];
+                wrapper.append(correctText);
             }
         }
         // Checkbox

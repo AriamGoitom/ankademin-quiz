@@ -1,35 +1,4 @@
-/* body.dark {
-    background-color: #222;
-    color: white;
-}
-
-body.dark button {
-    background-color: #444;
-    color: white;
-}
-
-body {
-    transition: background-color 0.3s ease, color 0.3 ease;
-}
-
-.correct {
-    border-left: 4px solid green;
-    padding-left: 8px;
-}
-
-.incorrect {
-    border-left: 4px solid red;
-    padding-left: 8px;
-}
-
-.correct-answer {
-    color: green;
-    font-weight: bold;
-    margin-top: 5px;
-}
- */
-
-/* ===== GENERAL LAYOUT ===== */
+/* General layout */
 body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(135deg, #ffe8f3, #fff4d1);
@@ -49,7 +18,7 @@ h1 {
     font-weight: 800;
 }
 
-/* ===== QUESTION CARD ===== */
+/* Question card */
 .question-card {
     background: white;
     padding: 20px;
@@ -61,13 +30,13 @@ h1 {
     transition: 0.3s ease;
 }
 
-/* Hover-effekt (bryter inte markingar) */
+/* Hover-effect (bryter inte markingar) */
 .question-card:not(.correct):not(.incorrect):hover {
     transform: scale(1.01);
     box-shadow: 0 6px 18px rgba(255, 110, 150, 0.28);
 }
 
-/* ===== RADIO & CHECKBOX STYLE ===== */
+/* Radio & Checkbox style */
 label {
     font-size: 1.05rem;
     cursor: pointer;
@@ -82,7 +51,7 @@ input[type="checkbox"] {
     margin-right: 8px;
 }
 
-/* ===== RESULT TEXT ===== */
+/* Result Text */
 #result {
     text-align: center;
     margin-top: 20px;
@@ -90,7 +59,7 @@ input[type="checkbox"] {
     font-weight: bold;
 }
 
-/* ===== BUTTONS ===== */
+/* Buttons */
 button {
     display: block;
     margin: 20px auto;
@@ -110,8 +79,7 @@ button:hover {
     box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
 }
 
-/* ===== CORRECT / INCORRECT ===== */
-/* Viktigt: Dessa kommer EFTER card-stilen! */
+/* Correct / Incorrect */
 
 .question-card.correct {
     border-left-color: #4cd964;
@@ -132,7 +100,7 @@ button:hover {
     font-size: 0.95rem;
 }
 
-/* ===== DARK MODE ===== */
+/* Dark Mode */
 body.dark {
     background: linear-gradient(135deg, #1d1d1d, #2c2c2c);
     color: white;
