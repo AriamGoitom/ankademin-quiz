@@ -1,4 +1,4 @@
-body.dark {
+/* body.dark {
     background-color: #222;
     color: white;
 }
@@ -26,4 +26,137 @@ body {
     color: green;
     font-weight: bold;
     margin-top: 5px;
+}
+ */
+
+/* ===== GENERAL LAYOUT ===== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffe8f3, #fff4d1);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    transition: 0.4s ease;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ff66b3, #ffa54b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* ===== QUESTION CARD ===== */
+.question-card {
+    background: white;
+    padding: 20px;
+    margin: 18px auto;
+    border-radius: 14px;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(255, 170, 80, 0.25);
+    border-left: 6px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* Hover-effekt (bryter inte markingar) */
+.question-card:not(.correct):not(.incorrect):hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 18px rgba(255, 110, 150, 0.28);
+}
+
+/* ===== RADIO & CHECKBOX STYLE ===== */
+label {
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #4fa3ff;
+    transform: scale(1.2);
+    margin-right: 8px;
+}
+
+/* ===== RESULT TEXT ===== */
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff66b3, #ffa84d);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 120, 150, 0.35);
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
+}
+
+/* ===== CORRECT / INCORRECT ===== */
+/* Viktigt: Dessa kommer EFTER card-stilen! */
+
+.question-card.correct {
+    border-left-color: #4cd964;
+    background: #e8ffe8;
+    box-shadow: 0 4px 16px rgba(80, 220, 120, 0.35);
+}
+
+.question-card.incorrect {
+    border-left-color: #ff4d4d;
+    background: #ffecec;
+    box-shadow: 0 4px 16px rgba(255, 80, 80, 0.35);
+}
+
+.correct-answer {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #1a8d1a;
+    font-size: 0.95rem;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    background: linear-gradient(135deg, #1d1d1d, #2c2c2c);
+    color: white;
+}
+
+body.dark .question-card {
+    background: #333;
+    box-shadow: 0 4px 12px rgba(255, 180, 80, 0.15);
+}
+
+body.dark .question-card.correct {
+    background: #233b23;
+    border-left-color: #6cff6c;
+}
+
+body.dark .question-card.incorrect {
+    background: #3b1f1f;
+    border-left-color: #ff6b6b;
+}
+
+body.dark .correct-answer {
+    color: #a8ff9f;
+}
+
+body.dark button {
+    background: linear-gradient(45deg, #ff9dda, #ffcd71);
 }

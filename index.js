@@ -103,6 +103,8 @@ const resultDiv = document.querySelector('#result');
 function loadQuiz() {
     questions.forEach((q, index) => {
         const wrapper = document.createElement('div');
+        wrapper.classList.add("question-card");
+
 
         const title = document.createElement('h3');
         title.textContent = `${index + 1}. ${q.question}`;
