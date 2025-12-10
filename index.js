@@ -19,40 +19,40 @@ const questions = [
     },
     {
         type: "multiple",
-        question: "=== compares both value and data type.",
+        question: "What does === compares?",
         options: [
-            "Yes, it compares both value and type.",
-            "No it only compares values.",
-            "No, it only compares types.",
+            "It compares both value and type.",
+            "It only compares values.",
+            "It only compares types.",
             "It depends on the browser."
         ],
         correct: 0
     },
     {
         type: "multiple",
-        question: "document.querySelector() always returns a list of elements.",
+        question: "What does document.querySelector() always return?",
         options: [
-            "True — it always returns an array.",
-            "False — it returns the first matching element.",
-            "True — it always returns a NodeList.",
-            "False — it returns null every time."
+            "It always returns an array.",
+            "It returns the first matching element.",
+            "It always returns a NodeList.",
+            "It returns null every time."
         ],
         correct: 1
     },
     {
         type: "multiple",
-        question: "addEventListener() can be used to listen to clicks, keyboard input, and other events.",
+        question: "What can addEventListener() be used to listen to?",
         options: [
-            "No, it only listens to click events.",
-            "Yes, it can listen to many event types.",
-            "No, only hover events are supported.",
+            "It only listens to click events.",
+            "It can listen to many event types.",
+            "Only hover events are supported.",
             "It works only with keyboard events."
         ],
         correct: 1
     },
     {
         type: "checkbox",
-        question: "NaN === NaN is true in JavaScript.",
+        question: "What is true about NaN === NaN in JavaScript?",
         options: [
             "This statement is false.",
             "NaN never equals itself.",
@@ -63,21 +63,21 @@ const questions = [
     },
     {
         type: "checkbox",
-        question: "A function in JavaScript can return a value using return.",
+        question: "What can a function in JavaScript return?",
         options: [
-            "Yes, return sends back a value.",
+            "Functions can return back a value.",
             "Functions can return objects.",
             "Functions can return arrays.",
-            "Functions cannot return values."
+            "Functions can return multiple separate independent values?"
         ],
         correct: [0, 1, 2]
     },
     {
         type: "checkbox",
-        question: "The array method .push() adds an element to the beginning of the array.",
+        question: "What can the array method .push() do?",
         options: [
-            "This statement is false.",
             "push() adds to the end.",
+            "push() method returns the new length of the array",
             "push() adds to the middle.",
             "push() removes an element."
         ],
@@ -85,9 +85,9 @@ const questions = [
     },
     {
         type: "checkbox",
-        question: "typeof null returns 'object'.",
+        question: "What is true about that typeof null returns 'object'?",
         options: [
-            "Yes, this is a JavaScript bug.",
+            "This is a JavaScript bug.",
             "It is historically incorrect.",
             "It still works this way today.",
             "typeof null returns 'null'."

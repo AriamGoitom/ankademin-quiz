@@ -79,7 +79,7 @@ button:hover {
     box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
 }
 
-#submit-btn {
+/* #submit-btn {
     background: linear-gradient(45deg, #ff66b3, #ffa84d);
     color: white;
     width: 197px;
@@ -97,7 +97,31 @@ button:hover {
 #submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
+} */
+
+
+
+#submit-btn {
+    background: linear-gradient(90deg, #ec4899, #fb923c); /* rosa → orange */
+    color: white;
+    width: 197px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    border-radius: 9999px;
+    padding: 17px 32px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.35); /* rosa skugga */
 }
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(236, 72, 153, 0.45); /* mörkare rosa */
+}
+
+
 
 /* Correct / Incorrect */
 .question-card.correct {
