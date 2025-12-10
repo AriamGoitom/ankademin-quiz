@@ -79,8 +79,27 @@ button:hover {
     box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
 }
 
-/* Correct / Incorrect */
+#submit-btn {
+    background: linear-gradient(45deg, #ff66b3, #ffa84d);
+    color: white;
+    width: 197px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    border-radius: 9999px;
+    padding: 17px 32px;
+    cursor: pointer;
 
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 120, 150, 0.35);
+}
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
+}
+
+/* Correct / Incorrect */
 .question-card.correct {
     border-left-color: #4cd964;
     background: #e8ffe8;
@@ -127,4 +146,19 @@ body.dark .correct-answer {
 
 body.dark button {
     background: linear-gradient(45deg, #ff9dda, #ffcd71);
+}
+
+#theme-toggle {
+    background: linear-gradient(90deg, #a855f7, #6366f1);
+    color: white;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    border-radius: 9999px;
+    padding: 17px 32px;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(99, 102, 241, 0.5);
 }
