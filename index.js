@@ -128,7 +128,7 @@ function loadQuiz() {
             });
         }
 
-        // Boolean & Multiple Choice (Radio Buttons)
+        // Checkbox
         if(q.type === "checkbox") {
             q.options.forEach((opt, i) => {
                 const label = document.createElement('label');

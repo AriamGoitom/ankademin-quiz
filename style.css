@@ -1,4 +1,3 @@
-/* General layout */
 body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(135deg, #ffe8f3, #fff4d1);
@@ -18,7 +17,6 @@ h1 {
     font-weight: 800;
 }
 
-/* Question card */
 .question-card {
     background: white;
     padding: 20px;
@@ -30,13 +28,11 @@ h1 {
     transition: 0.3s ease;
 }
 
-/* Hover-effect (bryter inte markingar) */
 .question-card:not(.correct):not(.incorrect):hover {
     transform: scale(1.01);
     box-shadow: 0 6px 18px rgba(255, 110, 150, 0.28);
 }
 
-/* Radio & Checkbox style */
 label {
     font-size: 1.05rem;
     cursor: pointer;
@@ -51,7 +47,6 @@ input[type="checkbox"] {
     margin-right: 8px;
 }
 
-/* Result Text */
 #result {
     text-align: center;
     margin-top: 20px;
@@ -59,7 +54,6 @@ input[type="checkbox"] {
     font-weight: bold;
 }
 
-/* Buttons */
 button {
     display: block;
     margin: 20px auto;
@@ -79,30 +73,8 @@ button:hover {
     box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
 }
 
-/* #submit-btn {
-    background: linear-gradient(45deg, #ff66b3, #ffa84d);
-    color: white;
-    width: 197px;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 1rem;
-    border-radius: 9999px;
-    padding: 17px 32px;
-    cursor: pointer;
-
-    transition: 0.2s ease;
-    box-shadow: 0 4px 10px rgba(255, 120, 150, 0.35);
-}
-
-#submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(255, 120, 150, 0.45);
-} */
-
-
-
 #submit-btn {
-    background: linear-gradient(90deg, #ec4899, #fb923c); /* rosa → orange */
+    background: linear-gradient(90deg, #ec4899, #fb923c);
     color: white;
     width: 197px;
     font-family: 'Inter', system-ui, sans-serif;
@@ -111,19 +83,15 @@ button:hover {
     border-radius: 9999px;
     padding: 17px 32px;
     cursor: pointer;
-
     transition: 0.2s ease;
-    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.35); /* rosa skugga */
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.35);
 }
 
 #submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(236, 72, 153, 0.45); /* mörkare rosa */
+    box-shadow: 0 6px 14px rgba(236, 72, 153, 0.45);
 }
 
-
-
-/* Correct / Incorrect */
 .question-card.correct {
     border-left-color: #4cd964;
     background: #e8ffe8;
@@ -143,7 +111,6 @@ button:hover {
     font-size: 0.95rem;
 }
 
-/* Dark Mode */
 body.dark {
     background: linear-gradient(135deg, #1d1d1d, #2c2c2c);
     color: white;
